@@ -42,7 +42,8 @@ function clearStorage(event) {
 
     event.target.reset();
 
-    console.log(formData);
+    // console.log(formData);
+    console.log(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)));
 
     localStorage.removeItem(LOCAL_STORAGE_KEY);
 }
