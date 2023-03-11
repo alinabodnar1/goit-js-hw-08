@@ -17,6 +17,8 @@ function createSaveData(event){
     formData[event.target.name] = event.target.value;
 
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(formData));
+
+    return formData;
 }
 
 function fillFields() {
@@ -29,13 +31,10 @@ function fillFields() {
         const { email, message } = parseData;
         
         emailRef.value = email;
-        messageRef.value = message;
         
+        messageRef.value = message;
     }
-    return parseData;
 }
-
-const currentData = fillFields();
 
 function clearStorage(event) {
 
@@ -43,7 +42,7 @@ function clearStorage(event) {
 
     event.target.reset();
 
-    console.log(currentData);
+    console.log(formData);
 
     localStorage.removeItem(LOCAL_STORAGE_KEY);
 }
